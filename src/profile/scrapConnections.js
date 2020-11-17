@@ -3,7 +3,7 @@ const scrapSection = require('../scrapSection')
 
 const logger = require('../logger')(__filename)
 
-const seeConnectionsSelector = 'a[data-control-name*="topcard_view_all_connections"]'
+const seeConnectionsSelector = 'a[data-control-name="url_card_action_click_highlights_shared_connections"]'
 
 const scrapConnections = async (page) => {
 	const link = await page.$eval(seeConnectionsSelector, e => e ? e.href.trim() : undefined);
