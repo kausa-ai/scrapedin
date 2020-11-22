@@ -20,7 +20,7 @@ module.exports = async ({ browser, cookies, url, puppeteerAuthenticate }) => {
   await page.setExtraHTTPHeaders({ 'Accept-Language': 'en-GB,en-US;q=0.9,en;q=0.8' })
   await page.setViewport({
     width: 1920,
-    height: 1080
+    height: 2080
   })
 
   if (puppeteerAuthenticate) {

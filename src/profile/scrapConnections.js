@@ -15,7 +15,7 @@ const scrapConnections = async (page) => {
 	let currentPage = 1;
 	await page.goto(link + '&page=' + currentPage);
 	const total = await page.$eval('.search-results__total', e => e ? parseInt(e.innerText) : 0)
-	const maxPage = total > 1000 ? 100 : total / 10;
+	const maxPage = total > 1000 ? 100 : Math.ceil(total / 10);
 	const connections = [];
 
 	if (total > 1000) {
